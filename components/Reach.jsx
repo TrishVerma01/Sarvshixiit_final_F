@@ -146,7 +146,7 @@ export default function Reach() {
       const h = w * 0.75; // maintain 4:3 aspect ratio
       setMapSize({ width: w, height: h });
       // Choose a low scale for narrow viewports to fit whole country
-      const newScale = w < 600 ? 400 : 1100;
+      const newScale = w * 1.14;
       setScale(newScale);
     };
     updateSize();
@@ -171,7 +171,7 @@ export default function Reach() {
             projection="geoMercator"
             projectionConfig={{
               scale: scale,
-              center: [80, 22] // Centered perfectly on India
+              center: [82.75, 22.75] // Centered perfectly on India
             }}
             width={mapSize.width}
             height={mapSize.height}
