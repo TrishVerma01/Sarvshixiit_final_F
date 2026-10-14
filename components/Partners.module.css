@@ -63,7 +63,13 @@
   height: clamp(38px, 6vw, 56px);
   width: auto;
   max-width: 100%;
+  object-fit: contain;
   display: block;
+}
+
+/* Wide lock-up logos carry small text, so give them a bit more height */
+.logoLg {
+  height: clamp(46px, 7vw, 68px);
 }
 
 /* Half screen / tablet and below: stack label above logo */
