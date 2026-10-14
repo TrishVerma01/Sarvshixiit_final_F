@@ -190,8 +190,7 @@
 }
 
 /* Responsive split screen / mobile optimized */
-/* Stack hero vertically on tablets / split screens so nothing overflows the fold */
-@media (max-width: 1100px) {
+@media (max-width: 600px) {
   .heroContainer {
     height: auto;
     min-height: 100lvh;
@@ -238,9 +237,7 @@
     max-height: none;
     overflow-y: visible;
   }
-}
 
-@media (max-width: 600px) {
   .heading {
     font-size: 2rem;
   }
