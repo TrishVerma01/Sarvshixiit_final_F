@@ -19,11 +19,11 @@ export default function Partners() {
       id="partners-section"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.5 }}
+      viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className={styles.inner}>
-        <span className={styles.label}>Incubated at</span>
+        <span className={styles.label}>Incubation and Technology Partner</span>
         <span className={styles.divider} aria-hidden="true" />
         <div className={styles.logos}>
           {partners.map((p) => (
