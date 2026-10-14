@@ -2,6 +2,9 @@
   width: 100%;
   position: relative;
   z-index: 10;
+  /* Breathing room so the strip never touches the hero content above it */
+  margin-top: clamp(2rem, 6vh, 4rem);
+  box-sizing: border-box;
   background: rgba(15, 23, 42, 0.45);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -11,22 +14,23 @@
 .inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1.25rem 2rem;
+  padding: clamp(1rem, 2.5vw, 1.5rem) clamp(1rem, 4vw, 2rem);
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
   flex-wrap: wrap;
 }
 
 .label {
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  font-size: clamp(0.7rem, 1.4vw, 0.85rem);
   font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
   color: #38bdf8;
-  white-space: nowrap;
 }
 
 .divider {
@@ -38,9 +42,10 @@
 .logos {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1.25rem;
   flex-wrap: wrap;
-  justify-content: center;
+  min-width: 0;
 }
 
 /* Logo is transparent with dark text, so it sits on a white pill
@@ -48,21 +53,24 @@
 .logoPill {
   background: #ffffff;
   border-radius: 12px;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem clamp(0.6rem, 2vw, 1rem);
   display: flex;
   align-items: center;
+  max-width: 100%;
+  box-sizing: border-box;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
-  height: 52px;
+  height: clamp(38px, 6vw, 56px);
   width: auto;
+  max-width: 100%;
   display: block;
 }
 
-@media (max-width: 600px) {
+/* Half screen / tablet and below: stack label above logo */
+@media (max-width: 800px) {
   .inner {
-    padding: 1rem 1.25rem;
     flex-direction: column;
     gap: 0.75rem;
   }
@@ -70,8 +78,10 @@
   .divider {
     display: none;
   }
+}
 
-  .logo {
-    height: 44px;
+@media (max-width: 420px) {
+  .label {
+    letter-spacing: 0.08em;
   }
 }
