@@ -11,6 +11,12 @@ const partners = [
     logo: "/partners/mzu-incubation-centre.png",
     alt: "Mizoram University Incubation Centre logo",
   },
+  {
+    name: "Startup Incubation and Innovation Centre, IIT Kanpur",
+    logo: "/partners/iitk-siic.png",
+    alt: "Startup Incubation and Innovation Centre, IIT Kanpur logo",
+    large: true,
+  },
 ];
 
 const GAP = 32; // px of breathing room between the hero and the strip
@@ -63,12 +69,16 @@ export default function Partners() {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className={styles.inner}>
-        <span className={styles.label}>Incubation and Technology Partner</span>
+        <span className={styles.label}>Incubation and Technology Partners</span>
         <span className={styles.divider} aria-hidden="true" />
         <div className={styles.logos}>
           {partners.map((p) => (
             <div key={p.name} className={styles.logoPill} title={p.name}>
-              <img src={p.logo} alt={p.alt} className={styles.logo} />
+              <img
+                src={p.logo}
+                alt={p.alt}
+                className={`${styles.logo} ${p.large ? styles.logoLg : ""}`}
+              />
             </div>
           ))}
         </div>
