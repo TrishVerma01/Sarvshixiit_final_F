@@ -15,6 +15,7 @@ const Mentors = dynamic(() => import("../components/Mentors"), { ssr: false });
 const Padhailikhai = dynamic(() => import("../components/Padhailikhai"), { ssr: false });
 const Reach = dynamic(() => import("../components/Reach"), { ssr: false });
 const OurSupport = dynamic(() => import("../components/OurSupport"), { ssr: false });
+const Partners = dynamic(() => import("../components/Partners"), { ssr: false });
 const Contact = dynamic(() => import("../components/Contact"), { ssr: false });
 
 export default function Home() {
@@ -46,6 +47,7 @@ export default function Home() {
       </div>
       {stage === "hero" && (
         <>
+          <Partners />
           <Mentors />
           <OurSupport />
           <Padhailikhai />
